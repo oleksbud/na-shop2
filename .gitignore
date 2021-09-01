@@ -1,0 +1,9 @@
+# Build data
+obj
+bin
+
+# Sensetive data
+appsettings.json
+
+# Service data
+*.db
