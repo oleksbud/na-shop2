@@ -4,16 +4,17 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NavBarComponent } from './core/nav-bar/nav-bar.component';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { CoreModule } from './core/core.module';
 import { ShopModule } from './shop/shop.module';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
     AppComponent,
   ],
   imports: [
+    AppRoutingModule,
     BrowserModule,
     BrowserAnimationsModule,
     BsDatepickerModule.forRoot(),
