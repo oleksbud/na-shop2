@@ -1,3 +1,4 @@
+import { IPagination } from '../models/pagination';
 import { IProduct } from '../models/product';
 
 export const UNKNOWN_STRING = 'Unknown';
@@ -14,3 +15,10 @@ export const defaultProduct: IProduct = {
     productBrand: UNKNOWN_STRING,
     productType: UNKNOWN_STRING,
 };
+
+export const defaultPagination: IPagination = {
+    pageIndex: 0,
+    pageSize: 0,
+    count: 0,
+    data: [],
+}

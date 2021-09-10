@@ -9,11 +9,25 @@
             </select>
             <h5 class="text-warning ml-3">Brands</h5>
             <ul class="list-group mb-3">
-                <li class="list-group-item" *ngFor="let brand of brands">{{brand.name}}</li>
+                <li class="list-group-item"
+                    *ngFor="let brand of brands"
+                    [class.active]="brand.id === brandIdSelected"
+                    [value]="brand.id"
+                    (click)="onBrandSelected(brand.id)"
+                >
+                    {{brand.name}}
+                </li>
             </ul>
             <h5 class="text-warning ml-3">Types</h5>
             <ul class="list-group my-3">
-                <li class="list-group-item" *ngFor="let productType of types">{{productType.name}}</li>
+                <li class="list-group-item"
+                    *ngFor="let productType of types"
+                    [class.active]="productType.id === typeIdSelected"
+                    [value]="productType.id"
+                    (click)="onTypeSelected(productType.id)"
+                >
+                    {{productType.name}}
+                </li>
             </ul>
 
         </section>
