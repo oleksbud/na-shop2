@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { CoreModule } from './core/core.module';
-import { ShopModule } from './shop/shop.module';
 import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
@@ -20,7 +19,6 @@ import { AppRoutingModule } from './app-routing.module';
     BsDatepickerModule.forRoot(),
     HttpClientModule,
     CoreModule,
-    ShopModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
