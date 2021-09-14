@@ -1,4 +1,4 @@
-<div class="container mt-5">
+<div class="container mt-3">
     <div class="row">
         <section class="col-3">
             <ng-container *ngIf="types.length && brands.length">
@@ -45,7 +45,7 @@
                     [pageNumber]="shopParams.pageNumber"
                 ></app-pagging-header>
 
-                <div class="form-inline mt-2" *ngIf="products.length">
+                <div class="form-inline" *ngIf="products.length">
                     <input  #search
                             class="form-control"
                             style="width: 300px;"

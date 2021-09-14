@@ -11,6 +11,7 @@ import { CoreModule } from './core/core.module';
 import { AppRoutingModule } from './app-routing.module';
 import { ErrorInterceptor } from './core/interceptors/error.interceptor';
 import { LoadingInterceptor } from './core/interceptors/loading.interceptor';
+import { HomeModule } from './home/home.module';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { LoadingInterceptor } from './core/interceptors/loading.interceptor';
     BsDatepickerModule.forRoot(),
     HttpClientModule,
     CoreModule,
+    HomeModule,
     NgxSpinnerModule
   ],
   providers: [
