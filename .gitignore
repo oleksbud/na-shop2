@@ -7,3 +7,4 @@ appsettings.json
 
 # Service data
 *.db
+*.rdb
