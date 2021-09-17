@@ -11,7 +11,7 @@ import { IProduct } from '../shared/models/product';
 })
 export class BasketService {
   baseUrl = environment.apiUrl;
-  private basketSource = new BehaviorSubject<IBasket>(new Basket());
+  private basketSource = new BehaviorSubject<IBasket | null>(null);
   basket$ = this.basketSource.asObservable();
 
   constructor(
@@ -21,7 +21,10 @@ export class BasketService {
   getBasket(id: string) {
     return this.http.get(this.baseUrl + 'basket?id=' + id)
     .pipe(
-      map((basket) => { this.basketSource.next(basket as IBasket); })
+      map((basket) => {
+         this.basketSource.next(basket as IBasket);
+         console.log(this.getCurrentBasketValue());
+      })
     );
   }
 
@@ -42,7 +45,10 @@ export class BasketService {
 
   addItemToBasket(item: IProduct, quantity = 1) {
     const itemToAdd: IBasketItem = this.mapProductItemToBasketItem(item, quantity);
-    const basket = this.getCurrentBasketValue() ?? this.createBasket();
+    let basket = this.getCurrentBasketValue();
+    if (!basket) {
+      basket = this.createBasket();
+    }
     basket.items = this.addOrUpdateItem(basket.items, itemToAdd, quantity);
     this.setBasket(basket);
   }
