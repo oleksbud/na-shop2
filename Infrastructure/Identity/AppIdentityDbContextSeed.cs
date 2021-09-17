@@ -24,7 +24,8 @@ namespace Infrastructure.Identity
                         State = "NY",
                         ZipCode = "90210"
                     }
-                }
+                };
+                await userManager.CreateAsync(user, "Pa$$w0rd");
             }
         }
     }
